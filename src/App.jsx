@@ -19,7 +19,7 @@ const App = () => {
 
       set_weather([response.data, ...weather]);
     } catch (error) {
-      console.error("error", error);
+      alert("City not found. Please enter a valid city name.");
     }
     e.target.reset();
   };
@@ -29,7 +29,7 @@ const App = () => {
       <h1>Fast Wheater App</h1>
 
       <form onSubmit={get_weather}>
-        <input type="text" placeholder="Enter Your City Name" ref={inputRef} />
+        <input type="text" placeholder="Enter Your City Name" ref={inputRef} required />
         <button>Get Wheather</button>
       </form>
 
